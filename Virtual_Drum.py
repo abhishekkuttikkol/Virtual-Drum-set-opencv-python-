@@ -14,16 +14,13 @@ while True:
     _, frame = cap.read()
     frame = cv2.flip(frame,1)
     frame = imutils.resize(frame,height=700, width=900)
-
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
     
     # change these value to change the object color
     lowred = np.array([131,90,106])
     highred = np.array([255,255,255])
-
     lowblue = np.array([40,150,116])
     highblue = np.array([255,255,255])
-
     red_mask = cv2.inRange(hsv, lowred, highred)
     blue_mask = cv2.inRange(hsv, lowblue, highblue)
 
@@ -37,7 +34,6 @@ while True:
     cv2.rectangle(frame, (660,0), (900,150), (0,0,255),1)
     cv2.putText(frame,'CRASH',(730,80),cv2.FONT_HERSHEY_SIMPLEX,1,(255,0,0),3,cv2.LINE_AA)
 
-
     cv2.rectangle(frame, (0,160), (50,370), (255,0,0),1)
     cv2.putText(frame,'SNARE',(10,290),cv2.FONT_HERSHEY_SIMPLEX,1,(0,0,255),3,cv2.LINE_AA)
     cv2.rectangle(frame, (0,380), (50,570), (0,0,255),1)
@@ -47,7 +43,6 @@ while True:
     cv2.putText(frame,'HIT HAT',(770,290),cv2.FONT_HERSHEY_SIMPLEX,1,(0,0,255),3,cv2.LINE_AA)
     cv2.rectangle(frame, (850,380), (900,570), (0,0,255),1)
     cv2.putText(frame,'HIT HAT OPEN',(670,500),cv2.FONT_HERSHEY_SIMPLEX,1,(255,0,0),3,cv2.LINE_AA)
-
 
     cv2.rectangle(frame, (0,580), (200,700), (255,0,0),1)
     cv2.putText(frame,'TOM HI',(50,640),cv2.FONT_HERSHEY_SIMPLEX,1,(0,0,255),3,cv2.LINE_AA)
@@ -78,8 +73,7 @@ while True:
         if x > 660 and y > 0 and x < 900 and y < 150:
             Press('9') #CRASH
             break      
-        
-        
+                
         if x > 0 and y > 160 and x < 50 and y < 370:
             Press('2') #SNARE
             break      
@@ -92,7 +86,6 @@ while True:
         if x > 850 and y > 380 and x < 900 and y < 570:
             Press('5') #HIT HAT OPEN 
             break      
-        
         
         if x > 0 and y > 580 and x < 200 and y < 700:
             Press('q') #TOM HI
@@ -129,7 +122,6 @@ while True:
             Press('9') #CRASH
             break      
         
-        
         if x > 0 and y > 160 and x < 50 and y < 370:
             Press('2') #SNARE
             break      
@@ -141,8 +133,7 @@ while True:
             break      
         if x > 850 and y > 380 and x < 900 and y < 570:
             Press('5') #HIT HAT OPEN 
-            break      
-        
+            break     
         
         if x > 0 and y > 580 and x < 200 and y < 700:
             Press('q') #TOM HI
