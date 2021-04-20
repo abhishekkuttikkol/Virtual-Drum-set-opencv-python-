@@ -17,6 +17,7 @@ while True:
 
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
     
+    # change these value to change the object color
     lowred = np.array([131,90,106])
     highred = np.array([255,255,255])
 
